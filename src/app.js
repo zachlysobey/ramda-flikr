@@ -16,11 +16,11 @@ const Impure = {
 };
 
 const url = term => `https://api.flickr.com/services/feeds/photos_public.gne?tags=${term}&format=json&jsoncallback=?`;
-const mediaUrl = compose(prop('m'), prop('media'));
-const srcs = compose(map(mediaUrl), prop('items'));
 const img = url => $('<img />', { src: url });
-const images = compose(map(img), srcs);
+const mediaUrl = compose(prop('m'), prop('media'));
+const mediaToImg = compose(img, mediaUrl);
+const images = compose(map(mediaToImg), prop('items'));
 const renderImages = compose(Impure.setHtml('body'), images);
 const app = compose(Impure.getJSON(renderImages), url);
 
-app('hello world');
+app('cat lady');
