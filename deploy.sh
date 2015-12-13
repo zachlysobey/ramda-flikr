@@ -22,6 +22,10 @@ git config user.email "zlysobey@gmail.com"
 git add .
 git commit -m "Deploy to GitHub Pages"
 echo "deploying?"
+echo "GH_TOKEN"
+echo $GH_TOKEN
+echo "GH_REF"
+echo $GH_REF
 
 # Force push from the current repo's master branch to the remote
 # repo's gh-pages branch. (All previous history on the gh-pages branch

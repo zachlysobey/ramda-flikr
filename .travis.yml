@@ -2,6 +2,7 @@ script: bash ./deploy.sh
 env:
   global:
   - GH_REF: github.com/zachlysobey/ramda-flikr.git
+  - secure: "tbXN+33bun/RIwZq5hcS12nhVA+SE1a9mj2N/MGgh9pdCcXa50Fl0WdEB4iFWpdFAbtR+9B+Hro+rTwOn2/pxwi7Zh91VkarvLmGf94I/NJLmmmrLRD02jSAFMAKkbI4T/vKmLkm5Rx4g05sDpc0zX40qSE1y9jp4Y2V/Ln0iT4YanMBwpBLlGf/kb5KI/U8Cjhj0GBlgRVYo5B8uRUO6xudLHjneDnnRI1Xb4fntNZtoT7S3B39LGwd8WuH8Q6BjnXVLEa5gjG4o1HO8pStvfLR42egtAKf0ph606698oIK1ULnrqZS2BS8GGXhCT1O0sNbCCRUt7d2DlbzvgxFNQL1dF6zvVLNycAWbDaRAN9xOmbK+6xNLauOPVeOhlx5Jj6aKXWE9GZrhnI1fYsxVK3x6cVjy6cePArect1LJoTmq8moV/qLJ/J3k4X/1k4iA80dPE8ZQ1Pc3V0f0n17Ru19g3u9vikpb7f52HwEf564SpUrrNvZcYMhGIh2Z8DTff4/j4vmogVaQnaAYyO+S/DNA+4LyZES9+sRzzMNCk1Zzj4wCd3uthzVuUHkL1inImdbk6h1z18At5FHjrTcchT4J7ENgyeCFtv9DybT6XJ48vTK2IlL3iGOMqSob3pk8h2TO3LeJ1Mh4caaz+MT9TbS5gO3NzAFZWto1A6wYlA="
 language: node_js
 node_js:
 - "4.2"
