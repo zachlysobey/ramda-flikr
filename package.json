@@ -9,9 +9,9 @@
   },
   "author": "Zach Lysobey",
   "license": "MIT",
-  "repository" : {
-    "type" : "git",
-    "url" : "https://github.com/zachlysobey/ramda-flikr.git"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zachlysobey/ramda-flikr.git"
   },
   "dependencies": {
     "jquery": "^2.1.4",

@@ -1,10 +1,26 @@
-import _ from 'ramda';
+import $ from 'jquery';
+import {curry, compose, prop, map} from 'ramda';
 
-var test = [1, 2, 3];
+const trace = curry(function (tag, x) {
+    console.log(tag, x);
+    return x;
+});
 
-var log = it => console.log(it);
+const Impure = {
+    getJSON: curry(function (callback, url) {
+        $.getJSON(url, callback);
+    }),
+    setHtml: curry(function (sel, html) {
+        $(sel).html(html);
+    })
+};
 
-// test.forEach(log);
-_.map(log, test);
+const url = term => `https://api.flickr.com/services/feeds/photos_public.gne?tags=${term}&format=json&jsoncallback=?`;
+const mediaUrl = compose(prop('m'), prop('media'));
+const srcs = compose(map(mediaUrl), prop('items'));
+const img = url => $('<img />', { src: url });
+const images = compose(map(img), srcs);
+const renderImages = compose(Impure.setHtml('body'), images);
+const app = compose(Impure.getJSON(renderImages), url);
 
-console.log('testing');
+app('hello world');
