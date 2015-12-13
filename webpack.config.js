@@ -2,7 +2,7 @@
 var path = require('path');
 
 var paths = Object.freeze({
-    dist: './src' // path.join(__dirname, 'build')
+    dist: path.join(__dirname, 'build')
 });
 
 module.exports = {
