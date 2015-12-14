@@ -1,11 +1,10 @@
 #!/bin/bash
 set -e # exit with nonzero exit code if anything fails
 
-# clear and re-create the out directory
+# clear the out directory
 rm -rf build || exit 0;
-mkdir build;
 
-# run our compile script, discussed above
+# run our build script
 npm run build
 
 # go to the out directory and create a *new* Git repo
@@ -20,11 +19,6 @@ git config user.email "zlysobey@gmail.com"
 # files present with the commit message "Deploy to GitHub Pages".
 git add .
 git commit -m "Deploy to GitHub Pages"
-echo "deploying?"
-echo "GH_TOKEN"
-echo $GH_TOKEN
-echo "GH_REF"
-echo $GH_REF
 
 # Force push from the current repo's master branch to the remote
 # repo's gh-pages branch. (All previous history on the gh-pages branch
@@ -32,5 +26,4 @@ echo $GH_REF
 # /dev/null to hide any sensitive credential data that might otherwise be exposed.
 git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:gh-pages > /dev/null 2>&1
 
-echo "deployed?"
 git status

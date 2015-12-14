@@ -1,4 +1,5 @@
 /* global __dirname */
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 var path = require('path');
 
 var paths = Object.freeze({
@@ -20,5 +21,11 @@ module.exports = {
             exclude: /node_modules/,
             loader: 'babel'
         }]
-    }
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: './src/index.html',
+            inject: 'body'
+        })
+    ]
 };
