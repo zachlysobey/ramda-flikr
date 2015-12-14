@@ -7,7 +7,6 @@ mkdir build;
 
 # run our compile script, discussed above
 npm run build
-cp ./src/index.html ./build/index.html
 
 # go to the out directory and create a *new* Git repo
 cd build
