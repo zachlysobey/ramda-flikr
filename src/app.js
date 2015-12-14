@@ -23,7 +23,7 @@ const img = url => $('<img />', { src: url });
 const mediaUrl = compose(prop('m'), prop('media'));
 const mediaToImg = compose(img, mediaUrl);
 const images = compose(map(mediaToImg), prop('items'));
-const renderImages = compose(Impure.setHtml('body'), images);
+const renderImages = compose(Impure.setHtml('#gallery'), images);
 const app = Impure.getJSON(renderImages);
 
 app(url);
