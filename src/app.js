@@ -15,12 +15,15 @@ const Impure = {
     })
 };
 
-const url = term => `https://api.flickr.com/services/feeds/photos_public.gne?tags=${term}&format=json&jsoncallback=?`;
+const tags = location.search.substr(1) || 'cats';
+const flickrApiBaseUrl = 'https://api.flickr.com/services/feeds/photos_public.gne';
+const url = flickrApiBaseUrl + '?tags=' + tags + '&format=json&jsoncallback=?';
+
 const img = url => $('<img />', { src: url });
 const mediaUrl = compose(prop('m'), prop('media'));
 const mediaToImg = compose(img, mediaUrl);
 const images = compose(map(mediaToImg), prop('items'));
 const renderImages = compose(Impure.setHtml('body'), images);
-const app = compose(Impure.getJSON(renderImages), url);
+const app = Impure.getJSON(renderImages);
 
-app('cat lady');
+app(url);
