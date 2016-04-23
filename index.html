@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ramda Webpack Flikr</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+</head>
+<body>
+
+    <h1>Ramda/Flikr Test project</h1>
+
+    <p>This is an app I built to learn some new stuff</p>
+
+    <ul>
+        <li>Functional Programming with JS (using Ramda)</li>
+        <li>WebPack for ES6 module loading as as a build script</li>
+        <li>Continuous deployment to Github Pages using TravisCI</li>
+    </ul>
+
+    <p>
+        The app uses Flikr's public API to get images for a particular tag.
+        The tag can be specified in the query string, and if one isn't found,
+        it defaults to "cats".
+    </p>
+
+    <p>
+        Example:
+        <a href="http://zachlysobey.github.io/ramda-flikr/?dog">
+            http://zachlysobey.github.io/ramda-flikr/?dog
+        </a>
+    </p>
+
+    <p>
+        The code is located here:
+        <a href="https://github.com/zachlysobey/ramda-flikr">
+            https://github.com/zachlysobey/ramda-flikr
+        </a>
+    </p>
+
+    <p>Much of the code and processes are taken directly from the following tutorials</p>
+
+    <ul>
+        <li>
+            <a href="https://drboolean.gitbooks.io/mostly-adequate-guide/content/ch6.html">
+                Professor Frisby's Mostly Adequate Guide to Functional Programming (CH 6)
+            </a>
+        </li>
+        <li>
+            Various WebPack resources/tutorials including:
+            <ul>
+                <li>
+                    <a href="http://webpack.github.io/docs/tutorials/getting-started/">
+                        Official Getting started page
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/Foxandxss/angular-webpack-workflow">
+                        Foxandxss's angular-webpack-workflow
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="https://gist.github.com/domenic/ec8b0fc8ab45f39403dd">
+                Auto-deploying built products to gh-pages with Travis
+            </a>
+        </li>
+    </ul>
+
+    <div id="gallery"></div>
+
+<script src="bundle.js"></script></body>
+</html>
