@@ -17,7 +17,7 @@ const Impure = {
 
 const tags = location.search.substr(1) || 'cats';
 const flickrApiBaseUrl = 'https://api.flickr.com/services/feeds/photos_public.gne';
-const url = flickrApiBaseUrl + '?tags=' + tags + '&format=json&jsoncallback=?';
+const url = `${flickrApiBaseUrl}?tags=${tags}&format=json&jsoncallback=?`;
 
 const img = url => $('<img />', { src: url });
 const mediaUrl = compose(prop('m'), prop('media'));
